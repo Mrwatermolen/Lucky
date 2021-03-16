@@ -94,7 +94,8 @@ def processImage(path):
  
  
 def main():
-    processImage('/home/pi/Desktop/E5DFDEA4006D5769694C5027ADF19287.gif')
+    path = /home/E5DFDEA4006D5769694C5027ADF19287.gif
+    processImage(path)
     
  
 if __name__ == "__main__":
