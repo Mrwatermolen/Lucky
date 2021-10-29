@@ -1,6 +1,6 @@
 # content: auto fix Bluray directory structure
-# author: Lam mingPang(mplin)
-# datetime:2021/10/21
+# author: MH
+# datetime:2021/10/29
 import os
 import sys
 import tkinter
