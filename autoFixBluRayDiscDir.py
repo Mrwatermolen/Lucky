@@ -18,7 +18,6 @@ bluRayStruct = {
 }
 bluRaySource = ''
 missing = []
-complete = False
 
 if 'win' in sys.platform:
     root = tkinter.Tk()
@@ -42,8 +41,16 @@ if dir_status[0] and dir_status[1] and dir_status[2]:
             for final_item in bluRayStruct[folder][item]:
                 valid_path = os.path.join(second_path, final_item)
                 if not os.path.exists(valid_path):
+                    missing_dir = os.path.join(os.path.join(
+                        folder, item.replace('self', '')), final_item)
+                    if missing_dir == os.path.join(folder, ''):
+                        print(f"{bluRaySource}该目录非蓝光光盘目录")
+                        for i in range(len(missing)):
+                            print(f"已创建的文件夹{missing[i]}")
+                        exit(0)
                     os.mkdir(valid_path)
-                    missing.append(valid_path)
+                    missing.append(missing_dir)
+
 if missing == []:
     print(f"{bluRaySource}的蓝光光盘目录结构完整")
 else:
