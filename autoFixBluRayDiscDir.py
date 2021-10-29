@@ -50,10 +50,9 @@ if dir_status[0] and dir_status[1] and dir_status[2]:
                         exit(0)
                     os.mkdir(valid_path)
                     missing.append(missing_dir)
-
-if missing == []:
-    print(f"{bluRaySource}的蓝光光盘目录结构完整")
-else:
-    print(f"{bluRaySource}的蓝光光盘目录结构缺失")
-    for i in range(len(missing)):
-        print(f"修复缺失文件夹{missing[i]}")
+    if missing == []:
+        print(f"{bluRaySource}的蓝光光盘目录结构完整")
+    else:
+        print(f"{bluRaySource}的蓝光光盘目录结构缺失")
+        for i in range(len(missing)):
+            print(f"修复缺失文件夹{missing[i]}")
